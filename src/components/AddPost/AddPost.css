@@ -1,0 +1,4 @@
+.add-post-container {
+    display: flex;
+    flex-direction: column;
+}
