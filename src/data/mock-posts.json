@@ -1,0 +1,82 @@
+[
+	{
+		"id": 1,
+		"author": "Alyce Vennard",
+		"title": "Watercolors",
+		"img": "http://dummyimage.com/181x100.png/dddddd/000000",
+		"summary": "ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at",
+		"date_posted": "08-10-2022"
+	},
+	{
+		"id": 2,
+		"author": "Scarface Annakin",
+		"title": "Sylvia",
+		"img": "http://dummyimage.com/184x100.png/ff4444/ffffff",
+		"summary": "sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl",
+		"date_posted": "02-05-2022"
+	},
+	{
+		"id": 3,
+		"author": "Justinian Royste",
+		"title": "Quarry, The",
+		"img": "http://dummyimage.com/221x100.png/cc0000/ffffff",
+		"summary": "non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta",
+		"date_posted": "01-11-2022"
+	},
+	{
+		"id": 4,
+		"author": "Ogdan Pitman",
+		"title": "Mourning Becomes Electra",
+		"img": "http://dummyimage.com/143x100.png/cc0000/ffffff",
+		"summary": "scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede",
+		"date_posted": "26-08-2022"
+	},
+	{
+		"id": 5,
+		"author": "Donni Tivnan",
+		"title": "Singles",
+		"img": "http://dummyimage.com/166x100.png/ff4444/ffffff",
+		"summary": "praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet",
+		"date_posted": "13-11-2022"
+	},
+	{
+		"id": 6,
+		"author": "Viviene Haslam",
+		"title": "Alpha Dog",
+		"img": "http://dummyimage.com/196x100.png/cc0000/ffffff",
+		"summary": "erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam",
+		"date_posted": "12-07-2022"
+	},
+	{
+		"id": 7,
+		"author": "Claresta Folini",
+		"title": "Chorus, The (Hamsarayan)",
+		"img": "http://dummyimage.com/189x100.png/5fa2dd/ffffff",
+		"summary": "libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus",
+		"date_posted": "29-04-2022"
+	},
+	{
+		"id": 8,
+		"author": "Amaleta Ahrend",
+		"title": "Square Dance",
+		"img": "http://dummyimage.com/148x100.png/ff4444/ffffff",
+		"summary": "ipsum dolor sit amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in",
+		"date_posted": "19-11-2022"
+	},
+	{
+		"id": 9,
+		"author": "Nikki Wallenger",
+		"title": "Hoodwinked!",
+		"img": "http://dummyimage.com/229x100.png/ff4444/ffffff",
+		"summary": "odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet",
+		"date_posted": "13-01-2022"
+	},
+	{
+		"id": 10,
+		"author": "Jamie Stickland",
+		"title": "Adventures of Robin Hood, The",
+		"img": "http://dummyimage.com/130x100.png/5fa2dd/ffffff",
+		"summary": "eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec",
+		"date_posted": "11-12-2021"
+	}
+]

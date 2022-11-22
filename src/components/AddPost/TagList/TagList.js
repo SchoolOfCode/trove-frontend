@@ -5,9 +5,8 @@ export default function TagList() {
 	return (
     <ul>
       {tags.map((tag, index) => {
-        return <li index={index}>{tag}</li>
+        return <li key={index}>{tag}</li>
       })}
-
 		</ul>
 	);
 }
