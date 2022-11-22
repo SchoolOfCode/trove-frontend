@@ -1,15 +1,16 @@
-import "../../../data/mock-posts.json"
+import "../../../data/mock-posts.json";
+import TagList from "../../TagList/TagList";
 
-export default function Post({id, author, title, img, summary, date_posted}) {
-    return (
-        <div>
-            <h2>{title}</h2>
-            <img src = {img} alt = "thumbnail"></img>
-            <p>{summary}</p>
-            <h3>{author}</h3>
-            <h3>{date_posted}</h3>
-            <button href = "{url}">Link</button>
-        </div>
-      
-    )
-}; 
+export default function Post({ post }) {
+	return (
+		<div>
+			<h2>{post.title}</h2>
+			<img src={post.thumbnail} alt="thumbnail"></img>
+			<p>{post.summary}</p>
+			<h3>{post.author}</h3>
+			<h3>{post.date_posted}</h3>
+			<TagList />
+			<a href={post.url}>Link</a>
+		</div>
+	);
+}
