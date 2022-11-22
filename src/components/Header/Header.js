@@ -1,13 +1,14 @@
-import React from 'react';
-import TagList from '../TagList/TagList';
+import React from "react";
+import TagList from "../TagList/TagList";
+import tags from "../../data/tags";
 
 export default function Header() {
-  return (
-    <div className="header">
-      <button className="add-post-btn">Add Post</button>
-      <button className="catagories-btn">Catagories</button>
-      <input className="search=bar" placeholder="Search:"></input>
-      <TagList />
-    </div>
-  );
+	return (
+		<div className="header">
+			<button className="add-post-btn">Add Post</button>
+			<button className="catagories-btn">Catagories</button>
+			<input className="search=bar" placeholder="Search:"></input>
+			<TagList tags={tags} />
+		</div>
+	);
 }
