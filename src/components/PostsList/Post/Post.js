@@ -1,9 +1,10 @@
 import '../../../data/mock-posts.json';
 import TagList from '../../TagList/TagList';
+import './Post.css';
 
 export default function Post({ post }) {
   return (
-    <div>
+    <div className="post">
       <h2 className="post-title">{post.title}</h2>
       <img className="post-img" src={post.thumbnail} alt="thumbnail"></img>
       <p className="post-summary">{post.summary}</p>

@@ -1,0 +1,27 @@
+.post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 6vh auto;
+    gap: 1rem;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: row;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .post-list {
+	display: grid;
+    grid-gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(277.98px, 1fr));
+	padding-block-start: 1rem;
+}
