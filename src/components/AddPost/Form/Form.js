@@ -1,15 +1,14 @@
 import React from "react";
+import TagList from "../TagList/TagList";
 
-export default function Form({tag}) {
+export default function Form() {
 	return (
 		<form>
 			<input></input>
 			<input></input>
 			<input></input>
       <textarea />
-      <ul>
-        <input type='checkbox'>{tag}</input>
-      </ul>
+      <TagList />
       <button>submit</button>
 		</form>
 	);
