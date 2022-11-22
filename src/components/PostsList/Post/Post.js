@@ -1,11 +1,14 @@
-export default function Post() {
+import "../../../data/mock-posts.json"
+
+export default function Post({id, author, title, img, summary, date_posted}) {
     return (
         <div>
-            <h2>Title</h2>
-            <p>Description</p>
-            <h3>Author</h3>
-            <h3>Date</h3>
-            <button>Link</button>
+            <h2>{title}</h2>
+            <img src = {img} alt = "thumbnail"></img>
+            <p>{summary}</p>
+            <h3>{author}</h3>
+            <h3>{date_posted}</h3>
+            <button href = "{url}">Link</button>
         </div>
       
     )
