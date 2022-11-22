@@ -1,5 +1,5 @@
 import React from "react";
-import TagList from "../TagList/TagList";
+import TagList from "../../TagList/TagList";
 
 export default function Form() {
 	return (
@@ -7,9 +7,9 @@ export default function Form() {
 			<input></input>
 			<input></input>
 			<input></input>
-      <textarea />
-      <TagList />
-      <button>submit</button>
+			<textarea />
+			<TagList />
+			<button>submit</button>
 		</form>
 	);
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import TagList from './TagList/TagList.js';
+import TagList from '../TagList/TagList'
 
 export default function Header() {
   return (
@@ -7,7 +7,7 @@ export default function Header() {
       <button>Add Post</button>
       <button>Catagories</button>
       <input placeholder="Search:"></input>
-      {/* <TagList /> */}
+      <TagList />
     </div>
   );
 }
