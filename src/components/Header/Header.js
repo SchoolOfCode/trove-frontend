@@ -1,7 +1,13 @@
-import React from 'react'
+import React from 'react';
+import TagList from './TagList/TagList.js';
 
 export default function Header() {
   return (
-    <div>Header</div>
-  )
+    <div>
+      <button>Add Post</button>
+      <button>Catagories</button>
+      <input placeholder="Search:"></input>
+      {/* <TagList /> */}
+    </div>
+  );
 }

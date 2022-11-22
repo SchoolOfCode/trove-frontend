@@ -6,8 +6,8 @@ import PostsList from './components/PostsList/PostsList';
 function App() {
   return (
     <div className="App">
-      <AddPost />
       <Header />
+      <AddPost />
       <PostsList />
     </div>
   );
