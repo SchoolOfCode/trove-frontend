@@ -1,0 +1,15 @@
+export const defaultTags = {
+  React: false,
+  JavaScript: false,
+  UX: false,
+  UI: false,
+  CSS: false,
+  TypeScript: false,
+  SuperTest: false,
+  Jest: false,
+  npm: false,
+  Cypress: false,
+  python: false,
+  'Express JS': false,
+  'Next JS': false,
+};

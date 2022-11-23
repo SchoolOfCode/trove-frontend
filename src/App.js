@@ -1,66 +1,40 @@
-import { useState } from "react";
-import "./App.css";
-import AddPost from "./components/AddPost/AddPost";
-import Header from "./components/Header/Header";
-import PostsList from "./components/PostsList/PostsList";
+import { useState } from 'react';
+import './App.css';
+import AddPost from './components/AddPost/AddPost';
+import Header from './components/Header/Header';
+import PostsList from './components/PostsList/PostsList';
+import { defaultTags } from './data/defaultTags';
 
 function App() {
   const [postTags, setPostTags] = useState([]);
   //! Not sure whether to start with empty array of tags or full array??
   const [filterTags, setFilterTags] = useState([]);
   const [toggleAddPost, setToggleAddPost] = useState(false);
-  const [link, setLink] = useState("");
-  const [name, setName] = useState("");
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [checked, setchecked] = useState({
-    React: false,
-    JavaScript: false,
-    UX: false,
-    UI: false,
-    CSS: false,
-    TypeScript: false,
-    SuperTest: false,
-    Jest: false,
-    npm: false,
-    Cypress: false,
-    python: false,
-    "Express JS": false,
-    "Next JS": false,
-  });
-  const [sidebar, setsidebar] = useState({
-    React: false,
-    JavaScript: false,
-    UX: false,
-    UI: false,
-    CSS: false,
-    TypeScript: false,
-    SuperTest: false,
-    Jest: false,
-    npm: false,
-    Cypress: false,
-    python: false,
-    "Express JS": false,
-    "Next JS": false,
-  });
+  const [link, setLink] = useState('');
+  const [name, setName] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [headerTags, setHeaderTags] = useState(defaultTags);
+  const [sidebarTags, setSidebarTags] = useState(defaultTags);
 
-  function changeHandler(e) {
+  function headerHandler(e) {
     const tag = e.target.dataset.id;
     // const obj = { [tag]:  };
-    setchecked({ ...checked, [tag]: !checked[tag] });
+    setHeaderTags({ ...headerTags, [tag]: !headerTags[tag] });
   }
+
   function sideHandler(e) {
     const tag = e.target.dataset.id;
     // const obj = { [tag]:  };
-    setsidebar({ ...sidebar, [tag]: !sidebar[tag] });
+    setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
   }
 
   return (
     <div className="App">
-      <Header changeFunction={sideHandler} checked={sidebar}/>
+      <Header changeFunction={sideHandler} checked={sidebarTags} />
       <AddPost
-        checked={checked}
-        changeFunction={changeHandler}
+        checked={headerTags}
+        changeFunction={headerHandler}
         setTitle={setTitle}
         title={title}
         link={link}
@@ -74,5 +48,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
