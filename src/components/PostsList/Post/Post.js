@@ -5,8 +5,8 @@ import "./Post.css";
 export default function Post({ post, tags }) {
 	return (
 		<div className="post">
-			<h2 className="post-title">{post.title}</h2>
 			<img className="post-img" src={post.thumbnail} alt="thumbnail"></img>
+			<h2 className="post-title">{post.title}</h2>
 			<p className="post-summary">{post.summary}</p>
 			<h3 className="post-author">{post.author}</h3>
 			<h3 className="post-date">{post.date_posted}</h3>

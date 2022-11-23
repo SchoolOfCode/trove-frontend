@@ -5,7 +5,7 @@ import "./PostList.css";
 
 export default function PostsList() {
 	return (
-		<div className="post-container">
+		<div>
 			<ul className="post-list">
 				{mockPosts.map((post, index) => {
 					return <Post post={post} key={index} tags={["javascript", "react"]} />;
