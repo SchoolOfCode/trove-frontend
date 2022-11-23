@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import TagList from "../TagList/TagList";
 import tags from "../../data/tags";
 
 export default function Header() {
+	const [toggleTagList, setToggleTagList] = useState(false);
+
 	return (
 		<div className="header">
 			<button className="add-post-btn">Add Post</button>
