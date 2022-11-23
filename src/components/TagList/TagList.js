@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import './TagList.css'
 
 export default function TagList({tags}) {
   const [checked, setchecked] = useState({

@@ -1,6 +1,7 @@
 import React from "react";
 import TagList from "../../TagList/TagList";
 import tags from "../../../data/tags";
+import './Form.css'
 
 export default function Form({ title, setTitle, name, setName, link, setLink, description, setDescription }) {
 	function handleChange(e) {
@@ -23,10 +24,10 @@ export default function Form({ title, setTitle, name, setName, link, setLink, de
 	}
 
 	return (
-		<form>
-			<input id="input-name" onChange={handleChange} placeholder="Name:" className="input-name"></input>
-			<input id="input-title" onChange={handleChange} placeholder="Title:" className="input-title"></input>
-			<input id="input-link" onChange={handleChange} placeholder="Link:" className="input-link"></input>
+		<form className="form">
+			<input id="text-input" onChange={handleChange} placeholder="Name:" className="text-input"></input>
+			<input id="input-title" onChange={handleChange} placeholder="Title:" className="text-input"></input>
+			<input id="input-link" onChange={handleChange} placeholder="Link:" className="text-input"></input>
 			<textarea id="description" onChange={handleChange} placeholder="Descrition:" className="description" />
 			<TagList tags={tags} />
 			<button className="submit-button">Submit</button>
