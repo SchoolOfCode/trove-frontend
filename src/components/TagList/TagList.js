@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-export default function TagList({tags}) {
-  const [checked, setchecked] = useState({
-
-  })
-  
-  function changeHandler(e) {
-    // console.log(e.target.checked);
-    // console.log(e.target.dataset.id);
-    checked[e.target.dataset.id]=e.target.checked
-    console.log(checked);
-  }
-  
-
+export default function TagList({ tags, changeFunction, checked }) {
+  console.log(checked);
   return (
     <div className="tag-list">
       {tags.map((tag) => {
@@ -21,11 +10,17 @@ export default function TagList({tags}) {
         return (
           <div>
             <label htmlFor={randomid}>{tag}</label>
-            <input data-id={tag} onChange={changeHandler} type="checkbox" key={randomid} id={randomid} ></input>
+            <input
+              data-id={tag}
+              onChange={changeFunction}
+              type="checkbox"
+              key={randomid}
+              checked={checked[tag]}
+              id={randomid}
+            ></input>
           </div>
         );
       })}
     </div>
   );
 }
-
