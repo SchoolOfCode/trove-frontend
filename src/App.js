@@ -6,10 +6,6 @@ import PostsList from './components/PostsList/PostsList';
 import { defaultTags } from './data/defaultTags';
 
 function App() {
-  const [postTags, setPostTags] = useState([]);
-  //! Not sure whether to start with empty array of tags or full array??
-  const [filterTags, setFilterTags] = useState([]);
-  const [toggleAddPost, setToggleAddPost] = useState(false);
   const [link, setLink] = useState('');
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
@@ -19,19 +15,16 @@ function App() {
 
   function headerHandler(e) {
     const tag = e.target.dataset.id;
-    // const obj = { [tag]:  };
     setHeaderTags({ ...headerTags, [tag]: !headerTags[tag] });
   }
 
   function sideHandler(e) {
     const tag = e.target.dataset.id;
-    // const obj = { [tag]:  };
     setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
   }
 
  return (
     <div className="App">
-      <Header changeFunction={sideHandler} checked={sidebarTags} />
       <AddPost
         checked={headerTags}
         changeFunction={headerHandler}
@@ -44,7 +37,10 @@ function App() {
         description={description}
         setDescription={setDescription}
       />
-      {/* <PostsList /> */}
+      <div>
+        <Header changeFunction={sideHandler} checked={sidebarTags} />
+        <PostsList />
+      </div>
     </div>
   );
 }

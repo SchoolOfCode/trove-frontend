@@ -39,28 +39,28 @@ export default function Form({
         id="input-name"
         onChange={handleChange}
         placeholder="Name:"
-        className="input-name"
+        className="text-input"
       ></input>
       <input
         id="input-title"
         onChange={handleChange}
         placeholder="Title:"
-        className="input-title"
+        className="text-input"
       ></input>
       <input
         id="input-link"
         onChange={handleChange}
         placeholder="Link:"
-        className="input-link"
+        className="text-input"
       ></input>
       <textarea
         id="description"
         onChange={handleChange}
         placeholder="Descrition:"
-        className="description"
+        className="text-input"
       />
       <TagList changeFunction={changeFunction} tags={tags} checked={checked}/>
-      <button className="submit-button">Submit</button>
+      <button className="add-post-button">Add new post</button>
     </form>
   );
 }

@@ -8,9 +8,11 @@ export default function Header({ changeFunction ,checked}) {
 
   return (
     <div className="header">
-      <button className="add-post-btn">Add Post</button>
-      <button className="catagories-btn">Catagories</button>
-      <input className="search=bar" placeholder="Search:"></input>
+      <div class="header-input-container">
+        <button className="add-post-btn">Add Post</button>
+        <button className="catagories-btn">Catagories</button>
+        <input className="search-bar" placeholder="Search:"></input>
+      </div>
       <TagList changeFunction={changeFunction} checked={checked} tags={tags} />
     </div>
   );

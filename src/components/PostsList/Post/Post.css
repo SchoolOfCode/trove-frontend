@@ -5,4 +5,16 @@ img {
 .post {
   display: flex;
   flex-direction: column;
+  gap: .5rem;
 }
+
+ul .tags {
+  display: flex;
+  gap: .5rem;
+}
+
+/* .post-url-container {
+  background-color: rgb(65, 229, 103);
+  padding: 1rem;
+  border-radius: 2rem;
+} */

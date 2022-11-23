@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import './TagList.css'
 
 export default function TagList({ tags, changeFunction, checked }) {
   console.log(checked);
@@ -8,7 +9,7 @@ export default function TagList({ tags, changeFunction, checked }) {
       {tags.map((tag) => {
         const randomid = uuidv4();
         return (
-          <div>
+          <>
             <label htmlFor={randomid}>{tag}</label>
             <input
               data-id={tag}
@@ -18,7 +19,7 @@ export default function TagList({ tags, changeFunction, checked }) {
               checked={checked[tag]}
               id={randomid}
             ></input>
-          </div>
+          </>
         );
       })}
     </div>

@@ -10,10 +10,16 @@ export default function Post({ post, tags }) {
 			<p className="post-summary">{post.summary}</p>
 			<h3 className="post-author">{post.author}</h3>
 			<h3 className="post-date">{post.date_posted}</h3>
-			<TagList className="post-tag-list" tags={tags} />
-			<a className="post-url" href={post.url}>
-				Link
-			</a>
+			<ul className='tags'>
+				<li>placeholder</li>
+				<li>placeholder</li>
+				<li>placeholder</li>
+			</ul>
+			<div class="post-url-container">
+				<a className="post-url" href={post.url}>
+					Link
+				</a>
+			</div>
 		</div>
 	);
 }
