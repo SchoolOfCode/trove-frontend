@@ -29,7 +29,7 @@ function App() {
     setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
   }
 
-  return (
+ return (
     <div className="App">
       <Header changeFunction={sideHandler} checked={sidebarTags} />
       <AddPost

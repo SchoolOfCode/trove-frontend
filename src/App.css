@@ -1,3 +1,7 @@
 .App {
-  text-align: center;
+	display: grid;
+	grid-template-columns: minmax(150px, 25%) 1fr;
+	width: 95%;
+	margin: 2.5% auto;
+	gap: 2.5%;
 }

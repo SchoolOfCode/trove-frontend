@@ -1,11 +1,3 @@
-.post-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 90%;
-	margin: 6vh auto;
-	gap: 1rem;
-}
 ul {
 	list-style-type: none;
 	margin: 0;

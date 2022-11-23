@@ -1,6 +1,7 @@
 import React from "react";
 import TagList from "../../TagList/TagList";
 import tags from "../../../data/tags";
+import './Form.css'
 
 export default function Form({
   title,

@@ -1,0 +1,16 @@
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+/* label {
+  width: 200px;
+  height: 100px;
+  background: #c5101f;
+  color:white;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: .5rem;
+} */

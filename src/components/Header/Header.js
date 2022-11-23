@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TagList from "../TagList/TagList";
 import tags from "../../data/tags";
+import './Header.css'
 
 export default function Header({ changeFunction ,checked}) {
   const [toggleTagList, setToggleTagList] = useState(false);
