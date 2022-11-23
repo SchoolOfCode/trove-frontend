@@ -8,3 +8,7 @@
   display: flex;
   gap: 1rem;
 }
+
+.search-bar {
+  width: 100%;
+} 

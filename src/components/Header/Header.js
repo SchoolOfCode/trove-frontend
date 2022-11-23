@@ -11,7 +11,7 @@ export default function Header() {
 			<div class="header-input-container">
 				<button className="add-post-btn">Add Post</button>
 				<button className="catagories-btn">Catagories</button>
-				<input className="search=bar" placeholder="Search:"></input>
+				<input className="search-bar" placeholder="Search:"></input>
 			</div>
 			<TagList tags={tags} />
 		</div>
