@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <AddPost />
+      <AddPost setTitle={setTitle} title={title} link={link} setLink={setLink} name={name} setName={setName} description={description} setDescription={setDescription} />
       <PostsList />
     </div>
   );
