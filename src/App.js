@@ -6,10 +6,20 @@ import PostsList from './components/PostsList/PostsList';
 import { defaultTags } from './data/defaultTags';
 
 function App() {
-  const [link, setLink] = useState('');
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  // const [link, setLink] = useState('');
+  // const [name, setName] = useState('');
+  // const [title, setTitle] = useState('');
+  // const [description, setDescription] = useState('');
+  const [newPost, setNewPost] = useState({
+    title: '',
+    author: '',
+    thumbnail: 'https://static-cse.canva.com/blob/951430/1600w-wK95f3XNRaM.jpg',
+    summary: '',
+    date_posted: '2022-10-20T23:00:00.000Z',
+    url: '',
+    tags: [],
+  });
+
   const [headerTags, setHeaderTags] = useState(defaultTags);
   const [sidebarTags, setSidebarTags] = useState(defaultTags);
 
@@ -43,14 +53,15 @@ function App() {
       <AddPost
         checked={headerTags}
         changeFunction={headerHandler}
-        setTitle={setTitle}
-        title={title}
-        link={link}
-        setLink={setLink}
-        name={name}
-        setName={setName}
-        description={description}
-        setDescription={setDescription}
+        newPost={newPost}
+        // setTitle={setTitle}
+        // title={title}
+        // link={link}
+        // setLink={setLink}
+        // name={name}
+        // setName={setName}
+        // description={description}
+        // setDescription={setDescription}
       />
       <div>
         <Header changeFunction={sideHandler} checked={sidebarTags} />
