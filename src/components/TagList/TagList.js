@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import './TagList.css'
 
 export default function TagList({ tags, changeFunction, checked }) {
-  console.log(checked);
   return (
     <div className="tag-list">
       {tags.map((tag) => {

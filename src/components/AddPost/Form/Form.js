@@ -1,7 +1,7 @@
-import React from "react";
-import TagList from "../../TagList/TagList";
-import tags from "../../../data/tags";
-import './Form.css'
+import React from 'react';
+import TagList from '../../TagList/TagList';
+import tags from '../../../data/tags';
+import './Form.css';
 
 export default function Form({
   title,
@@ -13,54 +13,47 @@ export default function Form({
   description,
   setDescription,
   changeFunction,
-  checked
+  checked,
+  setNewPost,
+  newPost,
+  submitPost,
+  handleChange,
 }) {
-  function handleChange(e) {
-    switch (e.target.id) {
-      case "input-name":
-        setName(e.target.value);
-        break;
-      case "input-title":
-        setTitle(e.target.value);
-        break;
-      case "input-link":
-        setLink(e.target.value);
-        break;
-      case "description":
-        setDescription(e.target.value);
-        break;
-      default:
-        break;
-    }
-  }
+  // function handleSubmit() {
+  //   setNewPost(...newPost);
+  //   console.log(newPost.title);
+  // }
+
   return (
     <form>
       <input
-        id="input-name"
+        id="author"
         onChange={handleChange}
         placeholder="Name:"
         className="text-input"
       ></input>
       <input
-        id="input-title"
+        id="title"
         onChange={handleChange}
         placeholder="Title:"
         className="text-input"
       ></input>
       <input
-        id="input-link"
+        id="url"
         onChange={handleChange}
         placeholder="Link:"
         className="text-input"
       ></input>
       <textarea
-        id="description"
+        id="summary"
         onChange={handleChange}
         placeholder="Descrition:"
         className="text-input"
       />
-      <TagList changeFunction={changeFunction} tags={tags} checked={checked}/>
-      <button className="add-post-button">Add new post</button>
+      <TagList changeFunction={changeFunction} tags={tags} checked={checked} />
+      <button onClick={(e) => submitPost(e)} className="add-post-button">
+        Add new post
+      </button>
     </form>
   );
 }

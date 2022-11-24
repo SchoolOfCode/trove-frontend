@@ -6,10 +6,17 @@ import PostsList from './components/PostsList/PostsList';
 import { defaultTags } from './data/defaultTags';
 
 function App() {
-  const [link, setLink] = useState('');
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [allPosts, setAllPosts] = useState([]);
+  const [newPost, setNewPost] = useState({
+    title: '',
+    author: '',
+    thumbnail: 'https://static-cse.canva.com/blob/951430/1600w-wK95f3XNRaM.jpg',
+    summary: '',
+    date_posted: '2022-10-20T23:00:00.000Z',
+    url: '',
+    tags: [],
+  });
+
   const [headerTags, setHeaderTags] = useState(defaultTags);
   const [sidebarTags, setSidebarTags] = useState(defaultTags);
 
@@ -23,23 +30,58 @@ function App() {
     setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
   }
 
- return (
+  function handleChange(e) {
+    setNewPost({ ...newPost, [e.target.id]: e.target.value });
+  }
+
+  const getPosts = async () => {
+    const response = await fetch('http://localhost:3005/api/posts', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    console.log(data.payload);
+    return data.payload;
+  };
+
+  const submitPost = async (e) => {
+    e.preventDefault();
+    const result = Object.entries(sidebarTags)
+      .filter((item) => {
+        return item[1] === true;
+      })
+      .map((item) => item[0]);
+
+    const newObj = { ...newPost };
+    newObj.tags = result;
+
+    console.log(newObj, result);
+
+    const response = await fetch('http://localhost:3005/api/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newObj),
+    });
+    console.log(response.json());
+  };
+
+  return (
     <div className="App">
       <AddPost
-        checked={headerTags}
-        changeFunction={headerHandler}
-        setTitle={setTitle}
-        title={title}
-        link={link}
-        setLink={setLink}
-        name={name}
-        setName={setName}
-        description={description}
-        setDescription={setDescription}
+        handleChange={handleChange}
+        submitPost={submitPost}
+        setNewPost={setNewPost}
+        checked={sidebarTags}
+        changeFunction={sideHandler}
+        newPost={newPost}
       />
       <div>
-        <Header changeFunction={sideHandler} checked={sidebarTags} />
-        <PostsList />
+        <Header changeFunction={headerHandler} checked={headerTags} />
+        <PostsList allPosts={allPosts} />
       </div>
     </div>
   );

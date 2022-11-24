@@ -15,7 +15,7 @@ export default function Post({ post, tags }) {
 				<li>placeholder</li>
 				<li>placeholder</li>
 			</ul>
-			<div class="post-url-container">
+			<div className="post-url-container">
 				<a className="post-url" href={post.url}>
 					Link
 				</a>

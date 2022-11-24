@@ -1,0 +1,3 @@
+Store form data in an object that can be recieved by backend
+
+Create a default state 
