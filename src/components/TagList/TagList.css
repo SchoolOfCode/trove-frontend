@@ -1,18 +1,18 @@
 .tag-list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.3rem;
+	gap: 0.5rem;
 }
 input[type="checkbox"] {
 	display: none;
 }
 label {
-	border: 2px solid #d4e4f3;
-	background-color: #e0e9f1;
-	font-size: 12px;
+	background-color: #e6e7e8;
+	border: 2px solid #fff;
+	font-size: 16px;
 	font-weight: 600;
-	cursor: pointer;
-	padding: 6px;
+	padding-block: 4px;
+	padding-inline: 12px;
 	border-radius: 21px;
 	min-width: 42px;
 	text-align: center;
@@ -22,5 +22,11 @@ input[type="checkbox"]:hover + label {
 }
 input[type="checkbox"]:checked + label {
 	border-color: #215a90;
-	background: #97c2e9;
+	background: #b3daff;
 }
+
+/* 
+font-size: 14px;
+font-weight: 600;
+padding-block: 4px;
+padding-inline: 16px; */
