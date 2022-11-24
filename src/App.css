@@ -5,3 +5,10 @@
 	margin: 2.5% auto;
 	gap: 2.5%;
 }
+.App.hideNewPost {
+	grid-template-columns: 1fr;
+}
+/* .add-post-container really lives in AddPost.js - not here*/
+.App.hideNewPost .add-post-container {
+	display: none;
+}

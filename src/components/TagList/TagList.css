@@ -4,13 +4,23 @@
   gap: .3rem;
 }
 
-/* label {
-  width: 200px;
-  height: 100px;
-  background: #c5101f;
-  color:white;
-  align-items: center;
-  justify-content: center;
+input[type=checkbox] {
+  display: none;
+}
+
+label {
+  border: 2px solid #d4e4f3;
+  background-color: #e0e9f1;
+  font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
-  padding: .5rem;
-} */
+  padding: 6px;
+  border-radius: 21px;
+  min-width: 42px;
+  text-align: center;
+}
+
+input[type=checkbox]:checked + label {
+  border-color: #215a90;
+  background: #97c2e9;
+}

@@ -7,6 +7,13 @@ import { defaultTags } from "./data/defaultTags";
 
 function App() {
 	const [posts, setPosts] = useState([]);
+	const [headerTags, setHeaderTags] = useState(defaultTags);
+	const [sidebarTags, setSidebarTags] = useState(defaultTags);
+	const [filterText, setFilterText] = useState("");
+	const [headerTagsShowing, setHeaderTagsShowing] = useState(false);
+	const toggleHeaderTags = () => setHeaderTagsShowing(!headerTagsShowing);
+	const [addPostShowing, setAddPostShowing] = useState(false);
+	const toggleAddPost = () => setAddPostShowing(!addPostShowing);
 	const [newPost, setNewPost] = useState({
 		title: "",
 		author: "",
@@ -16,9 +23,6 @@ function App() {
 		url: "",
 		tags: [],
 	});
-	const [headerTags, setHeaderTags] = useState(defaultTags);
-	const [sidebarTags, setSidebarTags] = useState(defaultTags);
-	const [filterText, setFilterText] = useState("");
 
 	function filterTextHandler(e) {
 		setFilterText(e.target.value);
@@ -30,6 +34,9 @@ function App() {
 	function sideHandler(e) {
 		const tag = e.target.dataset.id;
 		setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
+	}
+	function handleChange(e) {
+		setNewPost({ ...newPost, [e.target.id]: e.target.value });
 	}
 
 	useEffect(() => {
@@ -46,10 +53,6 @@ function App() {
 
 		getPosts();
 	}, []);
-
-	function handleChange(e) {
-		setNewPost({ ...newPost, [e.target.id]: e.target.value });
-	}
 
 	const submitPost = async (e) => {
 		e.preventDefault();
@@ -75,10 +78,17 @@ function App() {
 	};
 
 	return (
-		<div className="App">
+		<div className={addPostShowing ? "App" : "App hideNewPost"}>
 			<AddPost handleChange={handleChange} submitPost={submitPost} setNewPost={setNewPost} checked={sidebarTags} changeFunction={sideHandler} newPost={newPost} />
 			<div>
-				<Header filterTextHandler={filterTextHandler} changeFunction={headerHandler} checked={headerTags} />
+				<Header
+					filterTextHandler={filterTextHandler}
+					changeFunction={headerHandler}
+					checked={headerTags}
+					headerTagsShowing={headerTagsShowing}
+					toggleHeaderTags={toggleHeaderTags}
+					toggleAddPost={toggleAddPost}
+				/>
 				<PostsList filterText={filterText} posts={posts} />
 			</div>
 		</div>
