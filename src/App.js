@@ -6,10 +6,10 @@ import PostsList from './components/PostsList/PostsList';
 import { defaultTags } from './data/defaultTags';
 
 function App() {
-  // const [link, setLink] = useState('');
-  // const [name, setName] = useState('');
-  // const [title, setTitle] = useState('');
-  // const [description, setDescription] = useState('');
+  const [link, setLink] = useState('');
+  const [name, setName] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
   const [newPost, setNewPost] = useState({
     title: '',
     author: '',
@@ -51,17 +51,18 @@ function App() {
   return (
     <div className="App">
       <AddPost
+        setNewPost={setNewPost}
         checked={headerTags}
         changeFunction={headerHandler}
         newPost={newPost}
-        // setTitle={setTitle}
-        // title={title}
-        // link={link}
-        // setLink={setLink}
-        // name={name}
-        // setName={setName}
-        // description={description}
-        // setDescription={setDescription}
+        setTitle={setTitle}
+        title={title}
+        link={link}
+        setLink={setLink}
+        name={name}
+        setName={setName}
+        description={description}
+        setDescription={setDescription}
       />
       <div>
         <Header changeFunction={sideHandler} checked={sidebarTags} />

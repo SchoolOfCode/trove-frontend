@@ -1,7 +1,7 @@
-import React from "react";
-import TagList from "../../TagList/TagList";
-import tags from "../../../data/tags";
-import './Form.css'
+import React from 'react';
+import TagList from '../../TagList/TagList';
+import tags from '../../../data/tags';
+import './Form.css';
 
 export default function Form({
   title,
@@ -13,26 +13,34 @@ export default function Form({
   description,
   setDescription,
   changeFunction,
-  checked
+  checked,
+  setNewPost,
+  newPost,
 }) {
   function handleChange(e) {
     switch (e.target.id) {
-      case "input-name":
+      case 'input-name':
         setName(e.target.value);
         break;
-      case "input-title":
+      case 'input-title':
         setTitle(e.target.value);
         break;
-      case "input-link":
+      case 'input-link':
         setLink(e.target.value);
         break;
-      case "description":
+      case 'description':
         setDescription(e.target.value);
         break;
       default:
         break;
     }
   }
+
+  function handleSubmit() {
+    setNewPost(...newPost);
+    console.log(newPost.title);
+  }
+
   return (
     <form>
       <input
@@ -40,6 +48,7 @@ export default function Form({
         onChange={handleChange}
         placeholder="Name:"
         className="text-input"
+        onClick={handleSubmit}
       ></input>
       <input
         id="input-title"
@@ -59,7 +68,7 @@ export default function Form({
         placeholder="Descrition:"
         className="text-input"
       />
-      <TagList changeFunction={changeFunction} tags={tags} checked={checked}/>
+      <TagList changeFunction={changeFunction} tags={tags} checked={checked} />
       <button className="add-post-button">Add new post</button>
     </form>
   );
