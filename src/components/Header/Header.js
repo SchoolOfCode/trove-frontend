@@ -8,7 +8,7 @@ export default function Header({ changeFunction ,checked}) {
 
   return (
     <div className="header">
-      <div class="header-input-container">
+      <div className="header-input-container">
         <button className="add-post-btn">Add Post</button>
         <button className="catagories-btn">Catagories</button>
         <input className="search-bar" placeholder="Search:"></input>
