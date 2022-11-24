@@ -15,11 +15,15 @@ export default function AddPost({
   checked,
   setNewPost,
   newPost,
+  submitPost,
+  handleChange,
 }) {
   return (
     <div className="add-post-container">
       <h2 className="form-title">Add Post</h2>
       <Form
+        handleChange={handleChange}
+        submitPost={submitPost}
         setNewPost={setNewPost}
         newPost={newPost}
         className="form"

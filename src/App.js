@@ -6,10 +6,7 @@ import PostsList from './components/PostsList/PostsList';
 import { defaultTags } from './data/defaultTags';
 
 function App() {
-  const [link, setLink] = useState('');
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [allPosts, setAllPosts] = useState([]);
   const [newPost, setNewPost] = useState({
     title: '',
     author: '',
@@ -33,6 +30,10 @@ function App() {
     setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
   }
 
+  function handleChange(e) {
+    setNewPost({ ...newPost, [e.target.id]: e.target.value });
+  }
+
   const getPosts = async () => {
     const response = await fetch('http://localhost:3005/api/posts', {
       method: 'GET',
@@ -45,27 +46,41 @@ function App() {
     return data.payload;
   };
 
-  const allPosts = getPosts();
-  getPosts();
+  const submitPost = async (e) => {
+    e.preventDefault();
+    const result = Object.entries(sidebarTags)
+      .filter((item) => {
+        return item[1] === true;
+      })
+      .map((item) => item[0]);
+
+    const newObj = { ...newPost };
+    newObj.tags = result;
+
+    console.log(newObj, result);
+
+    const response = await fetch('http://localhost:3005/api/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newObj),
+    });
+    console.log(response.json());
+  };
 
   return (
     <div className="App">
       <AddPost
+        handleChange={handleChange}
+        submitPost={submitPost}
         setNewPost={setNewPost}
-        checked={headerTags}
-        changeFunction={headerHandler}
+        checked={sidebarTags}
+        changeFunction={sideHandler}
         newPost={newPost}
-        setTitle={setTitle}
-        title={title}
-        link={link}
-        setLink={setLink}
-        name={name}
-        setName={setName}
-        description={description}
-        setDescription={setDescription}
       />
       <div>
-        <Header changeFunction={sideHandler} checked={sidebarTags} />
+        <Header changeFunction={headerHandler} checked={headerTags} />
         <PostsList allPosts={allPosts} />
       </div>
     </div>
