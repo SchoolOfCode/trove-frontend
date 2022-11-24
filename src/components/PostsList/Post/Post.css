@@ -1,20 +1,31 @@
 img {
-    width: 100%;
-  }
+	width: 100%;
+}
 
 .post {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
 ul .tags {
-  display: flex;
-  gap: .5rem;
+	display: flex;
+	gap: 0.5rem;
 }
-
-/* .post-url-container {
-  background-color: rgb(65, 229, 103);
-  padding: 1rem;
-  border-radius: 2rem;
-} */
+.post-url {
+	border: 2px solid #d4e4f3;
+	background-color: #e0e9f1;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	padding: .6rem;
+	border-radius: 21px;
+	min-width: 42px;
+	text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000;
+}
+.post-url:hover {
+	background: #b4d1eb;
+}
