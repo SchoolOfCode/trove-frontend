@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import AddPost from "./components/AddPost/AddPost";
-import Header from "./components/Header/Header";
-import PostsList from "./components/PostsList/PostsList";
-import { defaultTags } from "./data/defaultTags";
+import { useEffect, useState } from 'react';
+import './App.css';
+import AddPost from './components/AddPost/AddPost';
+import Header from './components/Header/Header';
+import PostsList from './components/PostsList/PostsList';
+import { defaultTags } from './data/defaultTags';
 
 function App() {
-	const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState({
     title: '',
     author: '',
@@ -20,36 +20,45 @@ function App() {
   const [headerTags, setHeaderTags] = useState(defaultTags);
   const [sidebarTags, setSidebarTags] = useState(defaultTags);
 
-	useEffect(() => {
-		const getPosts = async () => {
-			const response = await fetch("http://localhost:3005/api/posts", {
-				method: "GET",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-			const data = await response.json();
-			setPosts(data.playload);
-		};
+  function headerHandler(e) {
+    const tag = e.target.dataset.id;
+    setHeaderTags({ ...headerTags, [tag]: !headerTags[tag] });
+  }
+  function sideHandler(e) {
+    const tag = e.target.dataset.id;
+    setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
+  }
 
-		getPosts();
-	}, []);
+  useEffect(() => {
+    const getPosts = async () => {
+      const response = await fetch('http://localhost:3005/api/posts', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const data = await response.json();
+      setPosts(data.playload);
+    };
+
+    getPosts();
+  }, []);
 
   function handleChange(e) {
     setNewPost({ ...newPost, [e.target.id]: e.target.value });
   }
 
-  const getPosts = async () => {
-    const response = await fetch('http://localhost:3005/api/posts', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const data = await response.json();
-    console.log(data.payload);
-    return data.payload;
-  };
+  // const getPosts = async () => {
+  //   const response = await fetch('http://localhost:3005/api/posts', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+  //   const data = await response.json();
+  //   console.log(data.payload);
+  //   return data.payload;
+  // };
 
   const submitPost = async (e) => {
     e.preventDefault();
