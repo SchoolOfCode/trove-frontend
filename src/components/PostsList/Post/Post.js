@@ -1,8 +1,7 @@
-import "../../../data/mock-posts.json";
-import TagList from "../../TagList/TagList";
 import "./Post.css";
 
-export default function Post({ post, tags }) {
+export default function Post({ post }) {
+
 	return (
 		<div className="post">
 			<img className="post-img" src={post.thumbnail} alt="thumbnail"></img>
@@ -10,10 +9,10 @@ export default function Post({ post, tags }) {
 			<p className="post-summary">{post.summary}</p>
 			<h3 className="post-author">{post.author}</h3>
 			<h3 className="post-date">{post.date_posted}</h3>
-			<ul className='tags'>
-				<li>placeholder</li>
-				<li>placeholder</li>
-				<li>placeholder</li>
+			<ul className="tags">
+				{post.tags.map((tag, index) => {
+					return <li key={index}>{tag}</li>;
+				})}
 			</ul>
 			<div className="post-url-container">
 				<a className="post-url" href={post.url}>
