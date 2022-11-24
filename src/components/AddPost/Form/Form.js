@@ -4,13 +4,9 @@ import tags from '../../../data/tags';
 import './Form.css';
 
 export default function Form({
-  title,
   setTitle,
-  name,
   setName,
-  link,
   setLink,
-  description,
   setDescription,
   changeFunction,
   checked,

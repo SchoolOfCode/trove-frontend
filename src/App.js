@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import './App.css';
-import AddPost from './components/AddPost/AddPost';
-import Header from './components/Header/Header';
-import PostsList from './components/PostsList/PostsList';
-import { defaultTags } from './data/defaultTags';
+import { useEffect, useState } from "react";
+import "./App.css";
+import AddPost from "./components/AddPost/AddPost";
+import Header from "./components/Header/Header";
+import PostsList from "./components/PostsList/PostsList";
+import { defaultTags } from "./data/defaultTags";
 
 function App() {
-  const [allPosts, setAllPosts] = useState([]);
+	const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState({
     title: '',
     author: '',
@@ -20,15 +20,20 @@ function App() {
   const [headerTags, setHeaderTags] = useState(defaultTags);
   const [sidebarTags, setSidebarTags] = useState(defaultTags);
 
-  function headerHandler(e) {
-    const tag = e.target.dataset.id;
-    setHeaderTags({ ...headerTags, [tag]: !headerTags[tag] });
-  }
+	useEffect(() => {
+		const getPosts = async () => {
+			const response = await fetch("http://localhost:3005/api/posts", {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			const data = await response.json();
+			setPosts(data.playload);
+		};
 
-  function sideHandler(e) {
-    const tag = e.target.dataset.id;
-    setSidebarTags({ ...sidebarTags, [tag]: !sidebarTags[tag] });
-  }
+		getPosts();
+	}, []);
 
   function handleChange(e) {
     setNewPost({ ...newPost, [e.target.id]: e.target.value });
@@ -81,7 +86,7 @@ function App() {
       />
       <div>
         <Header changeFunction={headerHandler} checked={headerTags} />
-        <PostsList allPosts={allPosts} />
+        <PostsList posts={posts} />
       </div>
     </div>
   );
