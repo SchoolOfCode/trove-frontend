@@ -1,26 +1,26 @@
 .tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .3rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3rem;
 }
-
-input[type=checkbox] {
-  display: none;
+input[type="checkbox"] {
+	display: none;
 }
-
 label {
-  border: 2px solid #d4e4f3;
-  background-color: #e0e9f1;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 6px;
-  border-radius: 21px;
-  min-width: 42px;
-  text-align: center;
+	border: 2px solid #d4e4f3;
+	background-color: #e0e9f1;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	padding: 6px;
+	border-radius: 21px;
+	min-width: 42px;
+	text-align: center;
 }
-
-input[type=checkbox]:checked + label {
-  border-color: #215a90;
-  background: #97c2e9;
+input[type="checkbox"]:hover + label {
+	background: #b4d1eb;
+}
+input[type="checkbox"]:checked + label {
+	border-color: #215a90;
+	background: #97c2e9;
 }
