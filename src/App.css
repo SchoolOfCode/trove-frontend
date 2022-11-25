@@ -12,3 +12,14 @@
 .App.hideNewPost .add-post-container {
 	display: none;
 }
+button {
+	border-radius: .3rem;
+	border-color: rgb(195, 194, 194);
+}
+input {
+	border-radius: .3rem;
+	border: 1px solid rgb(110, 110, 110)
+}
+textarea {
+	border-radius: .3rem;
+}
