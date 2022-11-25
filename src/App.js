@@ -10,9 +10,9 @@ function App() {
 	const [headerTags, setHeaderTags] = useState(defaultTags);
 	const [sidebarTags, setSidebarTags] = useState(defaultTags);
 	const [filterText, setFilterText] = useState("");
-	const [headerTagsShowing, setHeaderTagsShowing] = useState(true);
+	const [headerTagsShowing, setHeaderTagsShowing] = useState(false);
 	const toggleHeaderTags = () => setHeaderTagsShowing(!headerTagsShowing);
-	const [addPostShowing, setAddPostShowing] = useState(true);
+	const [addPostShowing, setAddPostShowing] = useState(false);
 	const toggleAddPost = () => setAddPostShowing(!addPostShowing);
 	const [newPost, setNewPost] = useState({
 		title: "",

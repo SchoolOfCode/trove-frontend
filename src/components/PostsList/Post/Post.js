@@ -21,7 +21,7 @@ export default function Post({ post }) {
 						);
 					})}
 				</ul>
-				<a className="post-url" href={post.url}>
+				<a target="_blank" rel="noreferrer" className="post-url" href={post.url}>
 					Link
 				</a>
 			</div>
