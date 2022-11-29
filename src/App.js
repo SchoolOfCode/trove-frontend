@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import AddPost from "./components/AddPost/AddPost";
 import Header from "./components/Header/Header";
 import PostsList from "./components/PostsList/PostsList";
 import { defaultTags } from "./data/defaultTags";
+import usePostsFetcher from "./hooks/usePostsFetcher";
 
 function App() {
-	const [posts, setPosts] = useState([]);
+	//States
 	const [headerTags, setHeaderTags] = useState(defaultTags);
 	const [sidebarTags, setSidebarTags] = useState(defaultTags);
 	const [filterText, setFilterText] = useState("");
-	const [headerTagsShowing, setHeaderTagsShowing] = useState(false);
+	const [headerTagsShowing, setHeaderTagsShowing] = useState(true);
 	const toggleHeaderTags = () => setHeaderTagsShowing(!headerTagsShowing);
-	const [addPostShowing, setAddPostShowing] = useState(false);
+	const [addPostShowing, setAddPostShowing] = useState(true);
 	const toggleAddPost = () => setAddPostShowing(!addPostShowing);
 	const [newPost, setNewPost] = useState({
 		title: "",
@@ -23,7 +24,7 @@ function App() {
 		url: "",
 		tags: [],
 	});
-
+	//Handler Functions
 	function filterTextHandler(e) {
 		setFilterText(e.target.value);
 	}
@@ -38,25 +39,7 @@ function App() {
 	function handleChange(e) {
 		setNewPost({ ...newPost, [e.target.id]: e.target.value });
 	}
-
-	useEffect(() => {
-		const getPosts = async () => {
-			const response = await fetch("http://localhost:3005/api/posts", {
-				method: "GET",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-			const data = await response.json();
-			setPosts(data.payload);
-		};
-
-		getPosts();
-	}, []);
-
-
-
-	
+	//Async Hooks / Functions
 
 	const submitPost = async (e) => {
 		e.preventDefault();
@@ -81,6 +64,7 @@ function App() {
 		console.log(response.json());
 	};
 
+	//The JSX
 	return (
 		<div className={addPostShowing ? "App" : "App hideNewPost"}>
 			<AddPost handleChange={handleChange} submitPost={submitPost} setNewPost={setNewPost} checked={sidebarTags} changeFunction={sideHandler} newPost={newPost} />
@@ -93,7 +77,7 @@ function App() {
 					toggleHeaderTags={toggleHeaderTags}
 					toggleAddPost={toggleAddPost}
 				/>
-				<PostsList filterText={filterText} posts={posts} />
+				<PostsList filterText={filterText} posts={usePostsFetcher()} />
 			</div>
 		</div>
 	);
