@@ -16,11 +16,10 @@ What learners need is a dedicated and well-organised home for all these resource
 
 ## Our Solution
 
-Trove is searchable, filterable and persistent store for all these wonderful learning resources, built using PostgreSQL, Express, React, and Node.js.
+Trove is searchable, filterable and persistent store for all these wonderful learning resources, built using `PostgreSQL`, `Express`, `React`, and `Node.js`
 
 ## Project Status
-This project is currently in development. Users can browse resources and filter by title, as well as adding a new resource to the collection. 
-
+<mark>This project is currently in development</mark>. Users can browse resources and filter by title, as well as adding a new resource to the collection. 
 Functionality to filter by post topic / tag / category is in progress - watch this space! 👀
 
 ## Project Screen Shot(s)
@@ -49,22 +48,32 @@ To Visit App:
 
 `localhost:3000`  
 
+## Project Goals
+
+This was a 1-week project built during my nineth week at the School of Code bootcamp. Project goals included:  
+
+✅ Tackling a real-world problem for fellow bootcampers  
+✅ Using technologies learned up until this point  
+✅ Familiarising myself with documentation using JSDoc  
+
 ## Reflections
 
-This was a 1-week project built during my nineth week at the School of Code bootcamp. Project goals included: 
-1. Tackling a real-world problem for fellow bootcampers
-2. Using technologies learned up until this point 
-3. Familiarising myself with documentation using JSDoc
+### Overview
 
 After initial user research, our team decided we would build an application that allowed fellow bootcampers to browse, search, filter and contribute to vast collection of learning resources. 
 
 We built the frontend and backend as two seperate applications, linking them together around half-way through the week. 
-We went with the 'create-react-app' boilerplate on the frontend to take care of our setup as quickly as possible.  
+
+### Challenges Faced
 
 One of the main challenges we ran into was the use of category 'tags' and complications that arose from the re-use of custom react components. This lead to us having to spend a large chunk of our time trying to get the feature working, as we felt it was an integral part of our agreed MVP, however, this turned out to be time well-spent, and we learned a lot along the way.
 
 Due to project time constraints, we had to be pragmatic and cohesive within the team in order to pull off an entire app in less than 1 week. 
 
-In conclusion, we used the PERN technology stack (PostgreSQL, Express, React, and Node.js) to build a full-stack web application with CRUD operations, employing the `create-react-app` boilerplate to minimize initial setup and invest more time elsewhere. 
+### Conclusion
+
+In conclusion, we used the PERN technology stack (`PostgreSQL`, `Express`, `React`, and `Node.js`) to build a full-stack web application with CRUD operations, employing the `create-react-app` boilerplate to minimize initial setup and invest more time elsewhere. 
+
+### The Future of Trove
 
 We plan to continue adding features to the app, focussing next on simple user authentication, which will enable us to safely deploy the app, restricting access to learners on the bootcamp.
