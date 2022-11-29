@@ -72,8 +72,8 @@ Due to project time constraints, we had to be pragmatic and cohesive within the 
 
 ### Conclusion
 
-In conclusion, we used the PERN technology stack (`PostgreSQL`, `Express`, `React`, and `Node.js`) to build a full-stack web application with CRUD operations, employing the `create-react-app` boilerplate to minimize initial setup and invest more time elsewhere. 
+We used the PERN technology stack (`PostgreSQL`, `Express`, `React`, and `Node.js`) to build a full-stack web application with CRUD operations, employing the `create-react-app` boilerplate to minimize initial setup and invest more time elsewhere. 
 
 ### The Future of Trove
 
-We plan to continue adding features to the app, focussing next on simple user authentication, which will enable us to safely deploy the app, restricting access to learners on the bootcamp.
+We plan to continue adding features to the app, focussing next on simple user authentication/login, which will enable us to safely deploy the app, restricting access to just learners on the bootcamp.
