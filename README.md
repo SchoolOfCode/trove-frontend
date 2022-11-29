@@ -1,22 +1,20 @@
-# Welcome to Trove!
+<h1 align="center">Welcome to Trove!</h1>
 
 <p align="center">
   <img src="public/trove-logo.jpg" alt="logo"/>
 </p>
 
-Question:
+## The Problem
+
 > How often do you share a link? Once a week? Once a day? Multiple types a day?
->
 > How often do you receive a link and say to yourself: "I’ll visit that later..."? 
->
 > A day goes by and you receive another link. A week goes by and you receive ten more. 
->
 > Before you know it, you find yourself with a whole inventory of links to catch up on and they just keep stacking up!! 😭 
 
-As bootcampers at School of Code, we are **constantly** receiving links on Slack, but without a well-organised place to store them, they soon disappear up the chat thread, never to be seen again.
-
+As bootcampers at School of Code, we are <mark>constantly</mark> receiving links on Slack, but without a well-organised place to store them, they soon disappear up the chat thread, never to be seen again.
 What learners need is a dedicated and well-organised home for all these resources...
-...Enter 'Trove'! 
+
+## Our Solution
 
 Trove is searchable, filterable and persistent store for all these wonderful learning resources, built using PostgreSQL, Express, React, and Node.js.
 
@@ -51,14 +49,7 @@ To Visit App:
 
 `localhost:3000`  
 
-## Reflection
-
-  - What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
-  - What did you set out to build?
-  - Why was this project challenging and therefore a really good learning experience?
-  - What were some unexpected obstacles?
-  - What tools did you use to implement this project?
-      - This might seem obvious because you are IN this codebase, but to all other humans now is the time to talk about why you chose webpack instead of create react app, or D3, or vanilla JS instead of a framework etc. Brag about your choices and justify them here.  
+## Reflections
 
 This was a 1-week project built during my nineth week at the School of Code bootcamp. Project goals included: 
 1. Tackling a real-world problem for fellow bootcampers
