@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Welcome to Trove!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![logo](image.jpg)
 
-## Available Scripts
+Question:
+How often do you share a link? Once a week? Once a day? Multiple types a day?
+How often do you receive a link and say to yourself: "I’ll visit that later..."? 
 
-In the project directory, you can run:
+...a day goes by and you receive another link...a week goes by and you receive ten more, and before you know it, 
+you find yourself with a whole inventory of links to catch up on and they just keep stacking up!! 😭 
 
-### `npm start`
+As bootcampers at School of Code, we are **constantly** receiving links on Slack, but without a well-organised place to store them, they soon disappear up the chat thread, never to be seen again.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+What learners need is a dedicated and well-organised home for all these resources...
+...Enter 'Trove'! 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Trove is searchable, filterable and persistent store for all these wonderful learning resources, built using PostgreSQL, Express, React, and Node.js.
 
-### `npm test`
+## Project Status
+This project is currently in development. Users can browse resources and filter by title, as well as adding a new resource to the collection. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Functionality to filter by post topic / tag / category is in progress - watch this space! 👀
 
-### `npm run build`
+## Project Screen Shot(s)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![screenshot1](image.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![screenshot2](image.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation and Setup Instructions
 
-### `npm run eject`
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Installation:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm install`  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To Run Test Suite:  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm test`  
 
-## Learn More
+To Start Server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To Visit App:
 
-### Code Splitting
+`localhost:3000`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Reflection
 
-### Analyzing the Bundle Size
+  - What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
+  - What did you set out to build?
+  - Why was this project challenging and therefore a really good learning experience?
+  - What were some unexpected obstacles?
+  - What tools did you use to implement this project?
+      - This might seem obvious because you are IN this codebase, but to all other humans now is the time to talk about why you chose webpack instead of create react app, or D3, or vanilla JS instead of a framework etc. Brag about your choices and justify them here.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This was a 1-week project built during my nineth week at the School of Code bootcamp. Project goals included: 
+1. Tackling a real-world problem for fellow bootcampers
+2. Using technologies learned up until this point 
+3. Familiarising myself with documentation using JSDoc
 
-### Making a Progressive Web App
+After initial user research, our team decided we would build an application that allowed fellow bootcampers to browse, search, filter and contribute to vast collection of learning resources. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We built the frontend and backend as two seperate applications, linking them together around half-way through the week. 
+We went with the 'create-react-app' boilerplate on the frontend to take care of our setup as quickly as possible.  
 
-### Advanced Configuration
+One of the main challenges we ran into was the use of category 'tags' and complications that arose from the re-use of custom react components. This lead to us having to spend a large chunk of our time trying to get the feature working, as we felt it was an integral part of our agreed MVP, however, this turned out to be time well-spent, and we learned a lot along the way.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Due to project time constraints, we had to be pragmatic and cohesive within the team in order to pull off an entire app in less than 1 week. 
 
-### Deployment
+In conclusion, we used the PERN technology stack (PostgreSQL, Express, React, and Node.js) to build a full-stack web application with CRUD operations, employing the `create-react-app` boilerplate to minimize initial setup and invest more time elsewhere. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We plan to continue adding features to the app, focussing next on simple user authentication, which will enable us to safely deploy the app, restricting access to learners on the bootcamp.
