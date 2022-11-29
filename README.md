@@ -1,6 +1,6 @@
 # Welcome to Trove!
 
-![logo](image.jpg)
+![logo](public/trove-logo.jpg)
 
 Question:
 How often do you share a link? Once a week? Once a day? Multiple types a day?
