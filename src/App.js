@@ -48,11 +48,15 @@ function App() {
 				},
 			});
 			const data = await response.json();
-			setPosts(data.playload);
+			setPosts(data.payload);
 		};
 
 		getPosts();
 	}, []);
+
+
+
+	
 
 	const submitPost = async (e) => {
 		e.preventDefault();
