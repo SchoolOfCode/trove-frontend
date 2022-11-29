@@ -25,9 +25,9 @@ Functionality to filter by post topic / tag / category is in progress - watch th
 
 ## Project Screen Shot(s)
 
-![screenshot1](image.jpg)
-
-![screenshot2](image.jpg)
+<p align="center">
+  <img src="assets/frontend-screenshot.png" alt="screenshot of app"/>
+</p>
 
 ## Installation and Setup Instructions
 
