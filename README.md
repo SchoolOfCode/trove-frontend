@@ -1,13 +1,17 @@
 # Welcome to Trove!
 
-![logo](public/trove-logo.jpg)
+<p align="center">
+  <img src="public/trove-logo.jpg" alt="logo"/>
+</p>
 
 Question:
-How often do you share a link? Once a week? Once a day? Multiple types a day?
-How often do you receive a link and say to yourself: "I’ll visit that later..."? 
-
-...a day goes by and you receive another link...a week goes by and you receive ten more, and before you know it, 
-you find yourself with a whole inventory of links to catch up on and they just keep stacking up!! 😭 
+> How often do you share a link? Once a week? Once a day? Multiple types a day?
+>
+> How often do you receive a link and say to yourself: "I’ll visit that later..."? 
+>
+> A day goes by and you receive another link. A week goes by and you receive ten more. 
+>
+> Before you know it, you find yourself with a whole inventory of links to catch up on and they just keep stacking up!! 😭 
 
 As bootcampers at School of Code, we are **constantly** receiving links on Slack, but without a well-organised place to store them, they soon disappear up the chat thread, never to be seen again.
 
