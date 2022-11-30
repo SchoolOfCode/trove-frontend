@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import AddPost from "./components/AddPost/AddPost";
 import Header from "./components/Header/Header";
 import PostsList from "./components/PostsList/PostsList";
@@ -7,15 +7,29 @@ import { defaultTags } from "./data/defaultTags";
 import usePostsFetcher from "./hooks/usePostsFetcher";
 import CreateAndPost from "./utils/CreateAndPost";
 
+
+const initialState = true;
+
+function reducer({ headerTagsShowing, addPostShowing }, action) {
+	console.log('fired reducer')
+  switch (action.type) {
+    case 'header':
+      return !headerTagsShowing;
+    case 'sidebar':
+      return !addPostShowing;
+    default:
+      throw new Error();
+  }
+}
+
+
 function App() {
+
+	
 	//States
 	const [headerTags, setHeaderTags] = useState(defaultTags);
 	const [sidebarTags, setSidebarTags] = useState(defaultTags);
 	const [filterText, setFilterText] = useState("");
-	const [headerTagsShowing, setHeaderTagsShowing] = useState(true);
-	const toggleHeaderTags = () => setHeaderTagsShowing(!headerTagsShowing);
-	const [addPostShowing, setAddPostShowing] = useState(true);
-	const toggleAddPost = () => setAddPostShowing(!addPostShowing);
 	const [newPost, setNewPost] = useState({
 		title: "",
 		author: "",
@@ -26,6 +40,29 @@ function App() {
 		tags: [],
 	});
 	
+	
+	//! Hiding / Showing Stuff
+	// const [headerTagsShowing, setHeaderTagsShowing] = useState(true);
+	// const toggleHeaderTags = () => setHeaderTagsShowing(!headerTagsShowing);
+	// const [addPostShowing, setAddPostShowing] = useState(true);
+	// const toggleAddPost = () => setAddPostShowing(!addPostShowing);
+	
+	const [{ headerTagsShowing, addPostShowing }, dispatch] = useReducer(reducer, initialState)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//Handler Functions
 	function filterTextHandler(e) {
 		setFilterText(e.target.value);
@@ -58,8 +95,7 @@ function App() {
 					changeFunction={headerHandler}
 					checked={headerTags}
 					headerTagsShowing={headerTagsShowing}
-					toggleHeaderTags={toggleHeaderTags}
-					toggleAddPost={toggleAddPost}
+					dispatch={dispatch}
 				/>
 				<PostsList
 					filterText={filterText}
