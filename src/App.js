@@ -41,33 +41,35 @@ function App() {
 	}
 	//Async Hooks / Functions
 
-	const submitPost = async (e) => {
+	// TODO Split this out into two seperate functions
+	// TODO Add comment - what does this do
+
+	const createPost = async (e) => {
 		e.preventDefault();
 		const result = Object.entries(sidebarTags)
 			.filter((item) => {
 				return item[1] === true;
 			})
 			.map((item) => item[0]);
-
 		const newObj = { ...newPost };
 		newObj.tags = result;
+		submitPost(newObj);
+	};
 
-		console.log(newObj, result);
-
-		const response = await fetch("http://localhost:3005/api/posts", {
+	async function submitPost(postObj) {
+		await fetch("http://localhost:3005/api/posts", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(newObj),
+			body: JSON.stringify(postObj),
 		});
-		console.log(response.json());
-	};
+	}
 
 	//The JSX
 	return (
 		<div className={addPostShowing ? "App" : "App hideNewPost"}>
-			<AddPost handleChange={handleChange} submitPost={submitPost} setNewPost={setNewPost} checked={sidebarTags} changeFunction={sideHandler} newPost={newPost} />
+			<AddPost handleChange={handleChange} submitPost={createPost} setNewPost={setNewPost} checked={sidebarTags} changeFunction={sideHandler} newPost={newPost} />
 			<div>
 				<Header
 					filterTextHandler={filterTextHandler}
