@@ -1,10 +1,11 @@
-import { useState } from "react";
 import "./App.css";
+import { useState } from "react";
 import AddPost from "./components/AddPost/AddPost";
 import Header from "./components/Header/Header";
 import PostsList from "./components/PostsList/PostsList";
 import { defaultTags } from "./data/defaultTags";
 import usePostsFetcher from "./hooks/usePostsFetcher";
+import CreateAndPost from "./utils/CreateAndPost";
 
 function App() {
 	//States
@@ -24,6 +25,7 @@ function App() {
 		url: "",
 		tags: [],
 	});
+	
 	//Handler Functions
 	function filterTextHandler(e) {
 		setFilterText(e.target.value);
@@ -39,37 +41,17 @@ function App() {
 	function handleChange(e) {
 		setNewPost({ ...newPost, [e.target.id]: e.target.value });
 	}
-	//Async Hooks / Functions
-
-	// TODO Split this out into two seperate functions
-	// TODO Add comment - what does this do
-
-	const createPost = async (e) => {
-		e.preventDefault();
-		const result = Object.entries(sidebarTags)
-			.filter((item) => {
-				return item[1] === true;
-			})
-			.map((item) => item[0]);
-		const newObj = { ...newPost };
-		newObj.tags = result;
-		submitPost(newObj);
-	};
-
-	async function submitPost(postObj) {
-		await fetch("http://localhost:3005/api/posts", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(postObj),
-		});
-	}
 
 	//The JSX
 	return (
 		<div className={addPostShowing ? "App" : "App hideNewPost"}>
-			<AddPost handleChange={handleChange} submitPost={createPost} setNewPost={setNewPost} checked={sidebarTags} changeFunction={sideHandler} newPost={newPost} />
+			<AddPost
+				handleChange={handleChange}
+				submitPost={(e) => CreateAndPost(e, sidebarTags, newPost)}
+				setNewPost={setNewPost}
+				checked={sidebarTags}
+				changeFunction={sideHandler}
+				newPost={newPost} />
 			<div>
 				<Header
 					filterTextHandler={filterTextHandler}
@@ -79,7 +61,9 @@ function App() {
 					toggleHeaderTags={toggleHeaderTags}
 					toggleAddPost={toggleAddPost}
 				/>
-				<PostsList filterText={filterText} posts={usePostsFetcher()} />
+				<PostsList
+					filterText={filterText}
+					posts={usePostsFetcher()} />
 			</div>
 		</div>
 	);
