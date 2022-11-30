@@ -10,7 +10,7 @@ export default function Header({ changeFunction, checked, headerTagsShowing, dis
 					Add Post
 				</button>
 				<button className="catagories-btn" onClick={() => dispatch({ type: "header" })}>
-					Catagories
+					Categories
 				</button>
 				<input
 					onChange={(e) => {
