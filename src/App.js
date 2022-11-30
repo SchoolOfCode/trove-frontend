@@ -7,29 +7,31 @@ import { defaultTags } from "./data/defaultTags";
 import usePostsFetcher from "./hooks/usePostsFetcher";
 import CreateAndPost from "./utils/CreateAndPost";
 
+const initialState = {
+	addPostShowing: true,
+	headerTagsShowing: true,
+	filterText: '',
+};
 
-const initialState = true;
-
-function reducer({ headerTagsShowing, addPostShowing }, action) {
-	console.log('fired reducer')
-  switch (action.type) {
-    case 'header':
-      return !headerTagsShowing;
-    case 'sidebar':
-      return !addPostShowing;
-    default:
-      throw new Error();
-  }
+function reducer(state, action) {
+	console.log('reducer fired');
+	console.log(action.type);
+	switch (action.type) {
+		case "header":
+			{return { ...state, headerTagsShowing: !state.headerTagsShowing}}
+		case "sidebar":
+			{return { ...state, addPostShowing: !state.addPostShowing}}
+		case "searchbar":
+			{return { ...state, filterText: action.payload}}
+		default:
+			throw new Error();
+	}
 }
 
-
 function App() {
-
-	
-	//States
+	const [state, dispatch] = useReducer(reducer, initialState);
 	const [headerTags, setHeaderTags] = useState(defaultTags);
 	const [sidebarTags, setSidebarTags] = useState(defaultTags);
-	const [filterText, setFilterText] = useState("");
 	const [newPost, setNewPost] = useState({
 		title: "",
 		author: "",
@@ -39,34 +41,8 @@ function App() {
 		url: "",
 		tags: [],
 	});
-	
-	
-	//! Hiding / Showing Stuff
-	// const [headerTagsShowing, setHeaderTagsShowing] = useState(true);
-	// const toggleHeaderTags = () => setHeaderTagsShowing(!headerTagsShowing);
-	// const [addPostShowing, setAddPostShowing] = useState(true);
-	// const toggleAddPost = () => setAddPostShowing(!addPostShowing);
-	
-	const [{ headerTagsShowing, addPostShowing }, dispatch] = useReducer(reducer, initialState)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	//Handler Functions
-	function filterTextHandler(e) {
-		setFilterText(e.target.value);
-	}
 	function headerHandler(e) {
 		const tag = e.target.dataset.id;
 		setHeaderTags({ ...headerTags, [tag]: !headerTags[tag] });
@@ -81,25 +57,11 @@ function App() {
 
 	//The JSX
 	return (
-		<div className={addPostShowing ? "App" : "App hideNewPost"}>
-			<AddPost
-				handleChange={handleChange}
-				submitPost={(e) => CreateAndPost(e, sidebarTags, newPost)}
-				setNewPost={setNewPost}
-				checked={sidebarTags}
-				changeFunction={sideHandler}
-				newPost={newPost} />
+		<div className={state.addPostShowing ? "App" : "App hideNewPost"}>
+			<AddPost handleChange={handleChange} submitPost={(e) => CreateAndPost(e, sidebarTags, newPost)} setNewPost={setNewPost} checked={sidebarTags} changeFunction={sideHandler} newPost={newPost} />
 			<div>
-				<Header
-					filterTextHandler={filterTextHandler}
-					changeFunction={headerHandler}
-					checked={headerTags}
-					headerTagsShowing={headerTagsShowing}
-					dispatch={dispatch}
-				/>
-				<PostsList
-					filterText={filterText}
-					posts={usePostsFetcher()} />
+				<Header changeFunction={headerHandler} checked={headerTags} headerTagsShowing={state.headerTagsShowing} dispatch={dispatch} />
+				<PostsList filterText={state.filterText} posts={usePostsFetcher()} />
 			</div>
 		</div>
 	);
