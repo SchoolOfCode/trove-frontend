@@ -1,10 +1,11 @@
-<h1 align="center">Welcome to Trove!</h1>
+<h1 align="center">Welcome to!</h1>
 
 <p align="center">
-  <img src="public/trove-logo.jpg" alt="logo"/>
+  <img width="780" alt="Screenshot 2022-12-04 at 15 25 23" src="https://user-images.githubusercontent.com/112252258/205499425-38336dad-49db-4275-929a-b190f3b8427a.png">
 </p>
 
 ## The Problem
+
 
 > How often do you share a link? Once a week? Once a day? Multiple types a day?
 > How often do you receive a link and say to yourself: "I’ll visit that later..."? 
